@@ -1,5 +1,7 @@
 package tarea4;
-
+/*
+@author JaniraFVidal
+*/
 import java.util.Scanner;
 
 public class Criba {
