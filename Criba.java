@@ -1,35 +1,37 @@
 package entornos;
 
 import java.util.Scanner;
-
+/*
+@author JaniraFVidal
+*/
 public class Criba {
 
 	public static int[] generarPrimos(int max) {
 		
 		if (max >= 2) {
 
-			int tamañoArray = max + 1;
-			boolean[] esPrimo = new boolean[tamañoArray];
+			int tamaÃ±oArray = max + 1;
+			boolean[] esPrimo = new boolean[tamaÃ±oArray];
 
-			for (int i = 0; i < tamañoArray; i++)
+			for (int i = 0; i < tamaÃ±oArray; i++)
 				esPrimo[i] = true;
 			esPrimo[0] = esPrimo[1] = false;
 
-			for (int i = 2; i < Math.sqrt(tamañoArray) + 1; i++) {
+			for (int i = 2; i < Math.sqrt(tamaÃ±oArray) + 1; i++) {
 				if (esPrimo[i]) {
-					for (int j = 2 * i; j < tamañoArray; j += i)
+					for (int j = 2 * i; j < tamaÃ±oArray; j += i)
 						esPrimo[j] = false;
 				}
 			}
 
 			int cuantosPrimos = 0;
-			for (int i = 0; i < tamañoArray; i++) {
+			for (int i = 0; i < tamaÃ±oArray; i++) {
 				if (esPrimo[i])
 					cuantosPrimos++;
 			}
 
 			int[] primos = new int[cuantosPrimos];
-			for (int i = 0, j = 0; i < tamañoArray; i++) {
+			for (int i = 0, j = 0; i < tamaÃ±oArray; i++) {
 				if (esPrimo[i])
 					primos[j++] = i;
 			}
@@ -41,7 +43,7 @@ public class Criba {
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
-		System.out.println("Introduce el número para la criba de Erastótenes: ");
+		System.out.println("Introduce el nÃºmero para la criba de ErastÃ³tenes: ");
 		
 		int dato = teclado.nextInt();
 		int vector[] = new int[dato];
